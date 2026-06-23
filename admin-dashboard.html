@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard | Mawufemor Electrical Engineering Ltd</title>
+<link rel="stylesheet" href="style.new.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="1.2.png"></i>
+            <div>
+                <h2>MAWUFEMOR</h2>
+                <span>Electrical Engineering & Solar Systems</span>
+            </div>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="menu">
+            <li><a href="index.new.html#home">Home</a></li>
+            <li><a href="index.new.html#about">About Us</a></li>
+            <li><a href="index.new.html#services">Services</a></li>
+            <li><a href="index.new.html#projects">Projects Gallery</a></li>
+            <li><a href="index.new.html#quote">Request Quote</a></li>
+            <li><a href="index.new.html#contact">Contact</a></li>
+            <li><a href="admin-dashboard.html" class="active">Admin Dashboard</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="index.new.html#quote" class="quote-btn">Request Quote</a>
+        </div>
+    </nav>
+</header>
+
+<section class="auth-panel reveal" id="admin-login">
+    <div class="section-header">
+        <span>Admin Access</span>
+        <h2>Sign in to access the admin management tools</h2>
+    </div>
+    <div class="auth-card">
+        <div class="auth-tabs">
+            <button class="auth-tab active" data-target="login-panel">Sign In</button>
+            <button class="auth-tab" data-target="signup-panel">Create Account</button>
+        </div>
+        <div class="auth-content">
+            <form class="auth-form active" id="login-panel">
+                <label>Email</label>
+                <input type="email" placeholder="Admin email" id="login-email">
+                <label>Password</label>
+                <input type="password" placeholder="Password" id="login-password">
+                <button type="button" class="primary-btn" id="signin-btn">Sign In</button>
+            </form>
+            <form class="auth-form" id="signup-panel">
+                <label>Name</label>
+                <input type="text" placeholder="Full name" id="signup-name">
+                <label>Email</label>
+                <input type="email" placeholder="Email" id="signup-email">
+                <label>Password</label>
+                <input type="password" placeholder="Password" id="signup-password">
+                <button type="button" class="primary-btn" id="signup-btn">Create Account</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<main class="admin" id="admin-content" style="display: none;">
+    <section class="section-header">
+        <span>Admin Dashboard</span>
+        <h2>Access management tools for quotes, contacts, projects and users</h2>
+    </section>
+
+    <div class="admin-tabs">
+        <button class="tab-btn active" data-target="quote-management">Quote Management</button>
+        <button class="tab-btn" data-target="contact-management">Contact Management</button>
+        <button class="tab-btn" data-target="project-management">Project Management</button>
+        <button class="tab-btn" data-target="user-management">User Management</button>
+    </div>
+
+    <div class="tab-panels">
+        <div class="tab-panel active" id="quote-management">
+            <h3>Quote Management</h3>
+            <p>Review pending quote requests, approve proposals, and track progress.</p>
+        </div>
+        <div class="tab-panel" id="contact-management">
+            <h3>Contact Management</h3>
+            <p>Manage customer inquiries, store contact history, and follow up faster.</p>
+        </div>
+        <div class="tab-panel" id="project-management">
+            <h3>Project Management</h3>
+            <p>Monitor ongoing installations, assign crews, and update completion status.</p>
+        </div>
+        <div class="tab-panel" id="user-management">
+            <h3>User Management</h3>
+            <p>Control access, add new users, and keep your team secure.</p>
+        </div>
+    </div>
+
+    <div class="admin-actions">
+        <button type="button" class="primary-btn" id="signout-btn">Sign Out</button>
+    </div>
+</main>
+ <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-columns" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;align-items:start;padding:2rem 0;">
+                <div>
+                    <h3>Mawufemor Electrical Engineering Ltd</h3>
+                    <p>Power • Integrity • Innovation</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul style="list-style:none;padding:0;margin:0;">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul style="list-style:none;padding:0;margin:0;">
+                        <li>Electrical Installations</li>
+                        <li>Maintenance &amp; Repairs</li>
+                        <li>Inspections & Compliance</li>
+                        <li>Power Solutions</li>
+                        <li>Electrical Consulting</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <p>Ghana</p>
+                    <p>+233 053 585 1117 / +233 055 303 2733</p>
+                    <p>mawufemortech@email.com</p>
+                </div>
+            </div>
+            <div style="text-align:center;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.06);">
+                <p>&copy; 2026 Mawufemor Electrical Engineering Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+const navToggle = document.querySelector('.nav-toggle');
+const menu = document.querySelector('.menu');
+const navLinks = document.querySelectorAll('.menu a');
+const tabButtons = document.querySelectorAll('.tab-btn');
+const authTabs = document.querySelectorAll('.auth-tab');
+const authForms = document.querySelectorAll('.auth-form');
+const loginEmail = document.getElementById('login-email');
+const loginPassword = document.getElementById('login-password');
+const signupName = document.getElementById('signup-name');
+const signupEmail = document.getElementById('signup-email');
+const signupPassword = document.getElementById('signup-password');
+const loginBtn = document.getElementById('signin-btn');
+const signupBtn = document.getElementById('signup-btn');
+const authPanel = document.getElementById('admin-login');
+const adminContent = document.getElementById('admin-content');
+const signoutBtn = document.getElementById('signout-btn');
+
+navToggle.addEventListener('click', () => {
+    menu.classList.toggle('menu-open');
+    navToggle.classList.toggle('open');
+});
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.menu a.active')?.classList.remove('active');
+        link.classList.add('active');
+        menu.classList.remove('menu-open');
+        navToggle.classList.remove('open');
+    });
+});
+
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelector('.tab-btn.active')?.classList.remove('active');
+        document.querySelector('.tab-panel.active')?.classList.remove('active');
+        button.classList.add('active');
+        document.getElementById(button.dataset.target).classList.add('active');
+    });
+});
+
+function setAuthTab(targetId) {
+    document.querySelector('.auth-tab.active')?.classList.remove('active');
+    document.querySelector('.auth-form.active')?.classList.remove('active');
+    document.querySelector(`.auth-tab[data-target="${targetId}"]`)?.classList.add('active');
+    document.getElementById(targetId)?.classList.add('active');
+}
+
+function markLoggedIn() {
+    localStorage.setItem('adminLoggedIn', 'true');
+}
+
+function markLoggedOut() {
+    localStorage.removeItem('adminLoggedIn');
+}
+
+function isLoggedIn() {
+    return localStorage.getItem('adminLoggedIn') === 'true';
+}
+
+function updatePageState() {
+    if (isLoggedIn()) {
+        authPanel.style.display = 'none';
+        adminContent.style.display = 'block';
+        window.location.hash = '';
+    } else {
+        authPanel.style.display = 'block';
+        adminContent.style.display = 'none';
+        window.location.hash = '#admin-login';
+    }
+}
+
+authTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        setAuthTab(tab.dataset.target);
+    });
+});
+
+loginBtn?.addEventListener('click', () => {
+    if (loginEmail.value.trim() && loginPassword.value.trim()) {
+        markLoggedIn();
+        updatePageState();
+    } else {
+        alert('Please enter your email and password to sign in.');
+    }
+});
+
+signupBtn?.addEventListener('click', () => {
+    if (signupName.value.trim() && signupEmail.value.trim() && signupPassword.value.trim()) {
+        markLoggedIn();
+        updatePageState();
+    } else {
+        alert('Please fill out all fields to create an administrator account.');
+    }
+});
+
+updatePageState();
+
+signoutBtn?.addEventListener('click', () => {
+    markLoggedOut();
+    updatePageState();
+});
+</script>
+</body>
+</html>
